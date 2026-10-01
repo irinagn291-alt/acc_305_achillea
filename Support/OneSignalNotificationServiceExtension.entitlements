@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.achillea.ask.onesignal</string>
+		<string>group.com.achillea.ask.onesignal.n91</string>
 	</array>
 	<key>aps-environment</key>
 	<string>development</string>
