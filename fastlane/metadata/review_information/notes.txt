@@ -1,17 +1,22 @@
-At cold launch the system may show the standard iOS notifications permission prompt. There is no custom usage-description string for notifications in the app Info settings. A Camera usage description is present — "This app does not use the camera." — but the native UI never asks for camera access and never uses the camera.
+Thanks for reviewing Achillea. We retested the build under review on a clean device. From the splash through onboarding, the list, History, Settings and How Draw works, we could not reproduce a crash, a dead end, an empty screen or a non-functioning feature.
 
-There is no login or accounts, no in-app purchase, no account deletion flow, and no App Tracking Transparency prompt.
+Three behaviours are deliberate.
 
-Achillea is a dark, portrait name-picker for people who need one clear choice from a short list. You type names, optionally set Chance or turn on Even chance, lock the list when required, then Draw picks one name and saves it in History on this device.
+1. "Save names" stays disabled until "First name" and "Second name" both have text. "Add" stays disabled until "Add a name" has text. Type the missing name and the button enables.
+2. After a pick, names freeze and only "New list" continues. Status is "Saved"; the line is "That pick is in History. Start a new list for another." "New list" keeps the names and clears the lock and pick.
+3. History can open on "No picks yet." / "Draw a name, then read it here." Settings can open on "Nothing stored yet." / "Add two names on the list, then come back." Use "Back to the list" or Close, save names, Draw once, then reopen.
 
-No credentials or demo account are needed. Cold launch shows a full-screen splash image briefly (no text), then on first launch a four-page onboarding cover. Page 1 shows "One honest pick from names you type." and "Not a room spinner. Not a score sheet." with Skip and Continue. Page 2 shows "Lock the list. Then Draw." and "Once locked, names and chances stay put." Page 3 shows "Filed picks stay on this device." and "History keeps each pick. Undo last pick removes the newest one." Page 4 shows "Even chance treats two names the same." and "Chances stay even. Draw can run without a lock." with Begin and no Skip. Skip or Begin opens the main list titled Achillea with headline "Draw picks one name." If empty, enter First name and Second name, then tap Save names. Optionally turn on Even chance (hint: "Both names get the same chance. Draw can run now."), or add further rows with Add a name and Add, set Chance, then tap Lock names when Status is Ready. Tap Draw when Status is Locked, or when Even chance is on with exactly two names. After a pick, Status is Saved; tap New list to continue with the same names. Use the clock control (VoiceOver "Open History") for History and Undo last pick. Use the gear control (VoiceOver "Open Settings") for How Draw picks, Contact, How Draw works, Re-run onboarding, and Reset all data. On Simulator only, a one-time demo may plant Rowan and Sable with Even chance on plus prior History picks; otherwise start from "Type two names."
+Full review path. No account, no login:
+- Cold launch: full-screen splash briefly (no text). The system may show the standard notifications permission prompt. First launch, and after "Reset all data", shows the four-page cover.
+- Page 1: "One honest pick from names you type.", "Skip", "Continue". Page 2: "Lock the list. Then Draw." Page 3: "Filed picks stay on this device." Page 4: "Even chance treats two names the same.", "Begin" (no "Skip"). "Skip" or "Begin" opens the list titled "Achillea".
+- Clock (VoiceOver "Open History"), title "Achillea", gear (VoiceOver "Open Settings"). Headline "Draw picks one name." Empty list: "Type two names.", "First name", "Second name", "Save names".
+- Turn on "Even chance" (hint "Both names get the same chance. Draw can run now.") and tap "Draw", or set "Chance", tap "Lock names" when Status is "Ready", then "Draw" when Status is "Locked" (disabled until then). After a pick, tap "New list". While Ready, use "Add a name" and "Add".
+- Wider layout: side panel with fold title ("Ready" / "Locked" / "Saved"), "Last pick" and "Recent picks"; tap a row for History.
+- History titled "History", Close (VoiceOver "Close"). Day groups; "Undo last pick" confirms "Undo the last pick?" / "The newest pick leaves History. Names stay."
+- Settings titled "Settings", Close (VoiceOver "Close"). "How Draw picks", "Names" and "History" counts, "Contact" / "achillea-ask.pro/contact-us", "How Draw works", "Re-run onboarding", "Reset all data" (confirm "Reset all data?" / "This removes names, locks, and saved picks on this device."). "How Draw works" opens on "Lock the list, then pick." Close or "Back to the list" dismisses it. "Re-run onboarding" returns to the cover.
 
-Names, locks, and History stay on this device. In Settings, Contact opens the support page.
+On a physical device there is no starter content; type names and Draw. On Simulator only, a one-time demo may plant "Rowan" and "Sable" with "Even chance" on, plus History picks including "Tansy". Names, lock, even-chance, onboarding completion and History persist across launches.
 
-There is no region lock. Dates, times, and numbers follow the device locale.
+Technical facts: no accounts, no in-app purchases, no ads and no analytics. Notifications: standard iOS alert at cold launch; no custom usage-description string. Camera usage description: "This app does not use the camera." Never asked or used in the native UI. No App Tracking Transparency prompt. Names, locks and History stay on this device. No region lock; dates, times and numbers follow the device locale. Portrait only, iPhone and iPad, minimum iOS 17.0. Dark appearance.
 
-No licence or regulated-industry paperwork applies. This is a Lifestyle name-picker and is not a regulated product.
-
-The app is a personal log only and gives no recommendations. It does not present health, medical, or product-health information.
-
-The app does not scan barcodes or QR codes.
+If a problem appeared on a given device, screen or step, please send that place and the exact wording shown. We will fix it and resubmit the same day.
